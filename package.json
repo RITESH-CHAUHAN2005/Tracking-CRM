@@ -1,0 +1,30 @@
+{
+  "name": "axis-fire-crm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Axis Fire India lead management system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"node --watch server.js\" \"vite\"",
+    "build": "vite build",
+    "seed:firebase": "node scripts/seed-firebase.js",
+    "seed:demo": "node scripts/seed-demo.js",
+    "clear:demo": "node scripts/clear-demo.js"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.0.2",
+    "firebase": "^11.1.0",
+    "multer": "^1.4.5-lts.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "vite": "^6.0.5"
+  }
+}
