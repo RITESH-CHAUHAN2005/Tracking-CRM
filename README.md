@@ -23,4 +23,8 @@ Passwords are only read from `.env`, never sent to the browser or stored in Fire
 
 Build the React client with `npm run build`, set `NODE_ENV=production`, and run `npm start`. The Express server serves the generated `dist` folder. Deploy `firestore.rules` so direct client reads remain disabled; all data access goes through the role-checked Node API.
 
+## Vercel
+
+The repository includes a Vercel rewrite for the React SPA and Express API. Add these environment variables in the Vercel project settings before deploying: `FIREBASE_SERVICE_ACCOUNT_JSON`, `VITE_FIREBASE_API_KEY`, `VITE_FIREBASE_AUTH_DOMAIN`, `VITE_FIREBASE_PROJECT_ID`, `VITE_FIREBASE_STORAGE_BUCKET`, `VITE_FIREBASE_MESSAGING_SENDER_ID`, and `VITE_FIREBASE_APP_ID`. Keep the service-account JSON server-only; never prefix it with `VITE_`.
+
 The current vertical slice includes authenticated role-aware dashboards, employee-only lead scoping, Firestore-backed lead updates and activity entries, batch queries, `.xlsx`/CSV parsing endpoint, and admin CSV export. The remaining operational modules should be added on the same API boundary rather than querying Firestore directly from React.
